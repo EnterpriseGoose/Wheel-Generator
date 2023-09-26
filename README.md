@@ -1,2 +1,5 @@
 # Wheel-Generator
-Created with CodeSandbox
+
+Generator for text wheels
+
+(Meant for tone wheels)
