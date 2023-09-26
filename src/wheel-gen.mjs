@@ -49,7 +49,7 @@ class textNode {
 /** @type {HTMLCanvasElement} */
 const canvas = document.getElementById("wheel");
 canvas.height = canvas.width;
-canvas.style.height = canvas.width / 2 + "px";
+//canvas.style.height = canvas.width / 2 + "px";
 const vw = canvas.width / 100;
 const vh = canvas.height / 100;
 const ctx = canvas.getContext("2d");

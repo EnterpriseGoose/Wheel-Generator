@@ -4,6 +4,7 @@ body {
 
 #wheel {
   width: 40%;
+  align-self: start;
 }
 
 #app {
