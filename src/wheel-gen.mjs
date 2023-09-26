@@ -83,7 +83,7 @@ export function parseWheelData(wheelData) {
 
   nodes.forEach((node) => checkNode(node));
   ctx.font = 20 + 40 / wheelInfo.layers + "px Verdana";
-  for (i = 0; i < wheelInfo.layers; i++) {
+  for (let i = 0; i < wheelInfo.layers; i++) {
     wheelInfo.circles.push((TOTAL_WHEEL_SIZE / wheelInfo.layers) * (i + 1));
   }
 }
