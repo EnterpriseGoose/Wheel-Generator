@@ -101,7 +101,7 @@ function checkNode(node) {
 export function generateWheel() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  for (i = 0; i < wheelInfo.layers; i++) {
+  for (let i = 0; i < wheelInfo.layers; i++) {
     ctx.beginPath();
     ctx.arc(50 * vw, 50 * vh, wheelInfo.circles[i], 0, 2 * Math.PI);
     ctx.stroke();
