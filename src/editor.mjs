@@ -14,28 +14,31 @@ var layers = 2;
  */
 function generateInput(deleteButton, depth) {
   const input = document.createElement("input");
+  const inputContainer = document.createElement("div");
   const container = document.createElement("div");
   input.type = "text";
   input.oninput = parseEditor;
-  container.appendChild(input);
+  inputContainer.appendChild(input);
+  container.appendChild(inputContainer);
   container.classList.add("editor-input");
   container.classList.add("depth-" + depth);
   const childrenContainer = document.createElement("div");
   childrenContainer.classList.add("children");
   container.appendChild(childrenContainer);
   if (deleteButton) {
-    input.addEventListener("mouseover", (ev) => {
+    inputContainer.addEventListener("mouseenter", (ev) => {
       const xButton = document.createElement("button");
       xButton.classList.add(["x-button"]);
       xButton.innerText = "x";
       xButton.addEventListener("click", (ev) => {
-        ev.target.parentNode.remove();
+        ev.target.parentNode.parentNode.remove();
       });
-      ev.target.parentNode.insertBefore(xButton, childrenContainer);
+      ev.target.appendChild(xButton);
     });
-    input.addEventListener("mouseleave", (ev) => {
+    inputContainer.addEventListener("mouseleave", (ev) => {
+      console.log(ev.target);
       /** @type {HTMLDivElement} */
-      const container = ev.target.parentNode;
+      const container = ev.target.parentElement;
       const buttons = container.getElementsByClassName("x-button");
       Array.from(buttons).forEach((button) => {
         button.remove();
